@@ -1,12 +1,12 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
 // Utilities
-import kebabCase from "lodash/kebabCase"
+import kebabCase from 'lodash/kebabCase'
 
 // Components
-import { Helmet } from "react-helmet"
-import { Link, graphql } from "gatsby"
+import { Helmet } from 'react-helmet'
+import { Link, graphql } from 'gatsby'
 
 const TagsPage = ({
   location,
@@ -17,7 +17,7 @@ const TagsPage = ({
     },
   },
 }) => (
-    <Layout location={location} title={title}>
+  <Layout location={location} title={title}>
     <Helmet title={title} />
     <div>
       <h1>Tags</h1>
@@ -61,12 +61,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
-      limit: 2000
-    ) {
+    allMarkdownRemark(limit: 2000) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount
       }
     }
-  }`
+  }
+`
