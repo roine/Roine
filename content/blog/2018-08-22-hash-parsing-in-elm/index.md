@@ -1,7 +1,8 @@
 ---
+path: hash-parsing-in-elm
 title: How to use hash parsing in ELM 0.19
 date: '2018-08-22T11:15:37.121Z'
-tags: elm functional-programming elm-navigation
+tags: [elm, functional-programming, elm-navigation]
 ---
 Before in ELM 0.18 if you used `evancz/url-parser` you would use `parseHash` to parse the fragment. But now in 0.19 `elm/url` doesn't have such function. It is still possible to parse the hash though.
 

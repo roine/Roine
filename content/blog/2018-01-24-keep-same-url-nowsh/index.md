@@ -1,7 +1,8 @@
 ---
+path: keep-same-url-nowsh
 title: Keep same URL in now.sh
 date: '2018-01-24T12:15:37.121Z'
-tags: now.sh til static-file-hosting
+tags: [now.sh, til, static-file-hosting]
 ---
 In the world of static file hosting there are plenty of solutions. I picked __[now.sh][]__. It's free, easy to use and works well. I have had one problem with now.sh so far, it creates a new URL everytime you push. It's a feature that I dont need in some cases, here's how to solve. Put this in package.json:
 ```

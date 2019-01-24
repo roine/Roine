@@ -1,10 +1,12 @@
 const path = require(`path`)
+const _ = require("lodash")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const tagTemplate = path.resolve("src/templates/tags.js")
   return graphql(
     `
       {
@@ -19,6 +21,8 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                tags
+                path
               }
             }
           }
@@ -33,20 +37,34 @@ exports.createPages = ({ graphql, actions }) => {
     // Create blog posts pages.
     const posts = result.data.allMarkdownRemark.edges
 
+    let tags = []
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
-
+      tags = tags.concat(post.node.frontmatter.tags)
       createPage({
-        path: post.node.fields.slug,
+        path: post.node.frontmatter.path,
         component: blogPost,
         context: {
-          slug: post.node.fields.slug,
+          path: post.node.frontmatter.path,
           previous,
           next,
         },
       })
     })
+
+    tags = Array.from(new Set(tags))
+
+    tags.forEach(tag => {
+      createPage({
+        path: `/tags/${tag}/`,
+        component: tagTemplate,
+        context: {
+          tag,
+        },
+      })
+    })
+
   })
 }
 

@@ -1,7 +1,8 @@
 ---
+path: /reuse-last-argument-shell
 title: Reuse last argument from previous command
 date: '2018-12-20T16:57:37.121Z'
-tags: shell til
+tags: [shell, til]
 ---
 If you need to reuse the reuse the last argument from the previous command this is for you:
 ```shell

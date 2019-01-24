@@ -1,7 +1,8 @@
 ---
+path: /why-elm
 title: Why I ditched JS for ELM
 date: '2018-08-13T11:15:37.121Z'
-tags: elm javascript functional-programming
+tags: [elm, javascript, functional-programming]
 ---
 
 

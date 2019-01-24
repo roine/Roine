@@ -1,7 +1,8 @@
 ---
+path: empty-tag-react
 title: Empty Tag in React
 date: '2018-12-22T16:57:37.121Z'
-tags: react til
+tags: [react, til]
 ---
 When you need to return more than one element you have few solutions.
 ## Wrap with an element

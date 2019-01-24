@@ -1,7 +1,8 @@
 ---
+path: /building-elm-datepicker-part2
 title: Building a calendar UI in ELM - Part 2
 date: '2018-09-04T11:15:37.121Z'
-tags: elm functional-programming tutorial
+tags: [elm, functional-programming, tutorial, calendar]
 ---
 In the previous part of this tutorial we've seen how to represent the current month view into a list of dates. 
 Now let's see how we transform this data into something similar to the screenshot below.

@@ -1,7 +1,8 @@
 ---
+path: /building-elm-datepicker-part1
 title: Building a calendar UI in ELM - Part 1
 date: '2018-08-26T11:15:37.121Z'
-tags: elm functional-programming tutorial
+tags: [elm, functional-programming, tutorial, calendar]
 ---
 ELM was redesign recently and `Date` and `Time` have been removed from the core to the `Time` library. With that in mind 
 let's build a calendar.

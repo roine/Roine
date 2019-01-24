@@ -1,7 +1,8 @@
 ---
+path: prettify-model-in-browser-with-elm
 title: Pretty format ELM model in browser
 date: '2019-01-17T11:58:37.121Z'
-tags: elm til debug elm-0.19
+tags: [elm, til, debug, elm-0.19]
 ---
 <img src="./elm-debug-format.png" alt="An example of pretty format in browser" />
 
