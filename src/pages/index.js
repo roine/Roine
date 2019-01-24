@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-
+import Tags from'../components/Tags'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { rhythm } from '../utils/typography'
@@ -20,7 +20,7 @@ class BlogIndex extends React.Component {
         />
 
         {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
+          const title = node.frontmatter.title || node.frontmatter.path
           return (
             <div key={node.fields.slug}>
               <h3
@@ -34,6 +34,7 @@ class BlogIndex extends React.Component {
               </h3>
               <small>{node.frontmatter.date}</small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              <Tags tags={node.frontmatter.tags}/>
             </div>
           )
         })}
@@ -62,6 +63,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             path
+            tags
           }
         }
       }
