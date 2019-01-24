@@ -16,25 +16,34 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+          keywords={[`blog`, `gatsby`, `javascript`, `react`, `elm`, `graphql`]}
         />
 
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.frontmatter.path
           return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.frontmatter.path}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-              <Tags tags={node.frontmatter.tags}/>
+            <div key={node.frontmatter.path} style={{
+              background:'#fff', 
+              margin: '10px 0',
+              boxShadow: '0 1px 3px #ccc',
+              borderRadius: 3
+              }}>
+              <div style={{padding: '20px', }}>
+                <h3
+                  style={{
+                    marginBottom: rhythm(1 / 4),
+                    marginTop: 0,
+                    fontSize: rhythm(1.)
+                  }}
+                >
+                  <Link style={{ boxShadow: `none` }} to={node.frontmatter.path}>
+                    {title}
+                  </Link>
+                </h3>
+                <small>{node.frontmatter.date}</small>
+                <p dangerouslySetInnerHTML={{ __html: node.frontmatter.tags.includes('til') ? node.html : node.excerpt }} />
+              </div>
+              <Tags tags={node.frontmatter.tags} style={{paddingLeft: '20px', paddingRight: '20px'}}/>
             </div>
           )
         })}
@@ -59,6 +68,7 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+          html
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title

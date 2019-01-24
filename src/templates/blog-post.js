@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
+import Tags from '../components/Tags'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 
@@ -15,6 +16,7 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <h1>{post.frontmatter.title}</h1>
+        <Tags tags={post.frontmatter.tags}/>
         <p
           style={{
             ...scale(-1 / 5),
@@ -80,6 +82,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         path
+        tags
       }
     }
   }

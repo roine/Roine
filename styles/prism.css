@@ -1,0 +1,14 @@
+  /**
+   * If you only want to use line numbering
+   */
+  
+  .gatsby-highlight {
+    background-color: #272822;
+    margin: 0.5em 0;
+    padding:1em;
+  }
+  
+  .gatsby-highlight pre[class*="language-"].line-numbers {
+    padding: 0;
+    padding-left: 2.8em;
+  }

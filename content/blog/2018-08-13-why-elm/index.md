@@ -23,7 +23,7 @@ ELM app and `elm-package` take care of the dependencies.
 ## It's all about the data
 Functional programming focuses on the data hence ELM has many data types: List, Array, Record, Dict, Set, Maybe, Result 
 and many more. You can easily create your own as well.
-```haskell
+```elm
 type Country 
   = France 
   | UK 
@@ -61,7 +61,7 @@ Let's call this function inappropriately and get the compiler to report the erro
 ```haskell
 Maybe.withDefault 1 (Just "1")
 ```
-```
+```elm
 -- TYPE MISMATCH --------------------------------------------- repl-temp-000.elm
 
 The 2nd argument to function `withDefault` is causing a mismatch.

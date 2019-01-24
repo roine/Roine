@@ -6,12 +6,12 @@ tags: [shell, til]
 ---
 If you need to reuse the reuse the last argument from the previous command this is for you:
 ```bash
-$ touch config.js
-$ vi !$
+touch config.js
+vi !$
 ```
 Last command is equivalent to 
 ```bash
-$ vi config.js
+vi config.js
 ```
 Bonus:
 `echo $?` will display the exit code of therevious command
