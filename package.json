@@ -36,9 +36,11 @@
     "typography-theme-wordpress-2016": "^0.15.10"
   },
   "devDependencies": {
+    "cli-glob": "^0.1.0",
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.11.1",
-    "prettier": "^1.14.2"
+    "prettier": "^1.14.2",
+    "write-good": "^1.0.1"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
@@ -59,6 +61,7 @@
     "start": "npm run develop",
     "build": "gatsby build",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js",
-    "addPost": "ROOTDIR=`pwd` node scripts/addPost.js"
+    "addPost": "ROOTDIR=`pwd` node scripts/addPost.js",
+    "write-good": "write-good $(glob 'content/blog/**/*.md')"
   }
 }
