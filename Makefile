@@ -27,3 +27,6 @@ add: ## Add a post to the blog, `make add this is a blog post`
 
 dev: ## Run the development server
 	yarn run dev
+
+serve: ## Compile and run the production server
+	yarn prod
