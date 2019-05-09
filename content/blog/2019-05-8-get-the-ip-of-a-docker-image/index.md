@@ -8,5 +8,4 @@ If you need the container's IP
 ```bash
 docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_id
 ```
-
 Replace `container_id` by yours.
