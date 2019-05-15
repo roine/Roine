@@ -62,6 +62,7 @@
     "prod": "yarn build && gatsby serve",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js",
     "addPost": "ROOTDIR=`pwd` node scripts/addPost.js",
+    "addTil": "ROOTDIR=`pwd` node scripts/addTil.js",
     "write-good": "write-good $(glob 'content/blog/**/*.md')"
   }
 }

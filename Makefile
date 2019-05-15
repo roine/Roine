@@ -14,8 +14,8 @@ help: ## This help dialog.
         printf "%s\n" $$help_info; \
     done
 
-
-ifeq (add,$(firstword $(MAKECMDGOALS)))
+VALID_TASKS = til add
+ifeq ($(firstword $(MAKECMDGOALS)),$(filter $(firstword $(MAKECMDGOALS)),$(VALID_TASKS)))
   # use the rest as arguments for "run"
   RUN_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
   # ...and turn them into do-nothing targets
@@ -24,6 +24,9 @@ endif
 
 add: ## Add a post to the blog, `make add this is a blog post`
 	yarn run addPost $(RUN_ARGS)
+
+til: ## Add a til post to the blog, `make til this is a blog post`
+	yarn run addTil $(RUN_ARGS)
 
 dev: ## Run the development server
 	yarn run dev
