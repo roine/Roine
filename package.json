@@ -1,14 +1,14 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "roine",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Brain dumping site",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Jon",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/roine/Roine"
   },
   "dependencies": {
-    "gatsby": "^2.0.76",
+    "gatsby": "^2.24.47",
     "gatsby-image": "^2.0.29",
     "gatsby-plugin-feed": "^2.0.8",
     "gatsby-plugin-manifest": "^2.0.5",
@@ -41,16 +41,9 @@
     "prettier": "^1.14.2",
     "write-good": "^1.0.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
+  "homepage": "https://github.com/roine/Roine",
   "license": "MIT",
   "main": "n/a",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
-  },
   "scripts": {
     "dev": "gatsby develop",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",

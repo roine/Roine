@@ -3,7 +3,7 @@ module.exports = {
     title: `Roine`,
     author: `Jonathan de Monatlembert`,
     description: ``,
-    siteUrl: ``,
+    siteUrl: `https://demontalembert.com/`,
     social: {
       twitter: `jonathan_de_mo`,
     },
@@ -49,7 +49,7 @@ module.exports = {
               // you may use this to prevent Prism from re-processing syntax.
               // This is an uncommon use-case though;
               // If you're unsure, it's best to use the default value.
-              classPrefix: "language-",
+              classPrefix: 'language-',
               // This is used to allow setting a language for inline code
               // (i.e. single backticks) by creating a separator.
               // This separator is a string and will do no white-space
@@ -61,7 +61,12 @@ module.exports = {
               // setting this to '{ sh: "bash" }' will let you use
               // the language "sh" which will highlight using the
               // bash highlighter.
-              aliases: {sh: "bash", js: "javascript", rb: "ruby", ex: "elixir"},
+              aliases: {
+                sh: 'bash',
+                js: 'javascript',
+                rb: 'ruby',
+                ex: 'elixir',
+              },
               // This toggles the display of line numbers globally alongside the code.
               // To use it, add the following line in src/layouts/index.js
               // right after importing the prism color scheme:
@@ -73,7 +78,7 @@ module.exports = {
               // If setting this to true, the parser won't handle and highlight inline
               // code used in markdown i.e. single backtick code like `this`.
               noInlineHighlight: true,
-            }
+            },
           },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
@@ -91,7 +96,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
-        display: `minimal-ui`
+        display: `minimal-ui`,
       },
     },
     `gatsby-plugin-offline`,

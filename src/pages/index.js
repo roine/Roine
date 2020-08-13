@@ -47,7 +47,8 @@ class BlogIndex extends React.Component {
                   </Link>
                 </h3>
                 <small>{node.frontmatter.date}</small>
-                <p
+                <div
+                class="post__content"
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.tags.includes('til')
                       ? node.html
@@ -66,6 +67,7 @@ class BlogIndex extends React.Component {
     )
   }
 }
+
 
 export default BlogIndex
 
