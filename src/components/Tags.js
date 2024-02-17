@@ -27,7 +27,7 @@ function Tags({ tags, style }) {
             }}
             to={`/tags/${kebabCase(tag)}/`}
           >
-            {tag}
+            #{tag}
           </Link>
         </li>
       ))}

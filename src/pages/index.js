@@ -27,37 +27,21 @@ class BlogIndex extends React.Component {
               style={{
                 background: '#fff',
                 margin: '10px 0',
-                boxShadow: '0 1px 3px #ccc',
                 borderRadius: 3,
               }}
             >
-              <div style={{ padding: '20px' }}>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                    marginTop: 0,
-                    fontSize: rhythm(1),
-                  }}
-                >
-                  <Link
-                    style={{ boxShadow: `none` }}
-                    to={node.frontmatter.path}
-                  >
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-                <div
-                  class="post__content"
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      node.frontmatter.tags.includes('til') ||
-                      node.frontmatter.tags.includes('short')
-                        ? node.html
-                        : node.excerpt,
-                  }}
-                />
-              </div>
+              <h3
+                style={{
+                  marginBottom: rhythm(1 / 4),
+                  marginTop: 0,
+                  fontSize: rhythm(0.75),
+                }}
+              >
+                <Link style={{ boxShadow: `none` }} to={node.frontmatter.path}>
+                  {title}
+                </Link>
+              </h3>
+              <small>{node.frontmatter.date}</small>
               <Tags
                 tags={node.frontmatter.tags}
                 style={{ paddingLeft: '20px', paddingRight: '20px' }}
@@ -79,14 +63,9 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       edges {
         node {
-          excerpt
-          fields {
-            slug
-          }
-          html
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title

@@ -8,15 +8,15 @@ import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
   render() {
+    console.log(this.props.data)
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-
+    console.log(post)
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <h1>{post.frontmatter.title}</h1>
-        <Tags tags={post.frontmatter.tags} />
         <p
           style={{
             ...scale(-1 / 5),
@@ -28,6 +28,7 @@ class BlogPostTemplate extends React.Component {
           {post.frontmatter.date}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Tags tags={post.frontmatter.tags} />
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -66,14 +67,14 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($path: String!) {
+  query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
         title
         author
       }
     }
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    markdownRemark(frontmatter: { path: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
       html

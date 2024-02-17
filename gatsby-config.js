@@ -87,16 +87,16 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Roine`,
-        short_name: ``,
+        short_name: 'Roine',
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
+        icon: `content/assets/gatsby-icon.png`,
       },
     },
     `gatsby-plugin-offline`,

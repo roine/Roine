@@ -1,6 +1,3 @@
-body {
-  background: #eee;
-}
 blockquote {
   margin-left: 0;
 }
@@ -18,4 +15,8 @@ p > code {
 
 .post__content > p:last-child {
   margin: 0;
+}
+
+h3 a {
+  color: #110526;
 }
